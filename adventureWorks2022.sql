@@ -54,10 +54,11 @@ JOIN HumanResources.Employee e
 ON p.BusinessEntityID = e.BusinessEntityID;
 
 -- view of total transaction amounts per sales' person
-CREATE VIEW vw_SprzedazPracownikow AS
+CREATE VIEW vw_SprzedazPracownikow
+AS
 SELECT
-    p.FirstName 		AS Imię
-    ,p.LastName 		AS Nazwisko
+    p.FirstName 	AS Imię
+    ,p.LastName 	AS Nazwisko
     ,SUM(s.TotalDue) 	AS SumaTransakcji
 FROM Person.Person p
 JOIN Sales.SalesOrderHeader s
